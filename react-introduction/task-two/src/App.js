@@ -16,19 +16,22 @@ const lightValues = [
 
 function App() {
   const [isOn, setIsOn] = useState(true)
-
-  const lights = lightValues.map(({ id, color }) => <Light key={id} color={color} isOn={isOn} />)
   
   const toggleLight = () => {
     setIsOn(prevState => !prevState)
   }
 
+  // the key could be index if id wasn't available in this case
+  // this would not be a problem since the order of the lights is always the same
+  // and I'm not sorting or doing something else with the array to cause index/key problems
+  const lights = lightValues.map(({ id, color }) => <Light key={id} color={color} isOn={isOn} />)
+  
   return (
     <main>
       <div className='lights'>
         {lights}
       </div>
-      <button id='toggle-lights-button' onClick={toggleLight}>
+      <button className='toggle-lights-button' onClick={toggleLight}>
         Turn {isOn ? 'off' : 'on'}
       </button>
     </main>

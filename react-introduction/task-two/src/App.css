@@ -16,7 +16,7 @@ main {
   width: 100vw;
 }
 
-#toggle-lights-button {
+.toggle-lights-button {
   font-size: 1rem;
   font-weight: 600;
   color: white;
@@ -28,7 +28,7 @@ main {
   transition: .2s;
 }
 
-#toggle-lights-button:hover {
+.toggle-lights-button:hover {
   color: #2f2d2d;
   background-color: white;
 }
