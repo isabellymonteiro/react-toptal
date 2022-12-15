@@ -11,12 +11,12 @@ const App = () => {
 
   const colorListLength = colorList.length
 
-  const increment = () => {
+  const handleIncrement = () => {
     const newRandomColor = getRandomColor(colorList)
     setColorList(prevState => [newRandomColor, ...prevState])
   }
 
-  const decrement = () => {
+  const handleDecrement = () => {
     const lastColor = colorList[colorListLength - 1]
     const newColorList = colorList.filter(colorItem => colorItem !== lastColor)
     setColorList(newColorList)
@@ -26,8 +26,8 @@ const App = () => {
     <div className='App'>
       <TileCounter
         tileCount={colorListLength}
-        handleIncrement={increment}
-        handleDecrement={decrement}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
       />
       <TileList colorList={colorList} />
     </div>
