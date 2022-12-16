@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fontFamily);
+  color: var(--textColor);
+  text-shadow: var(--textShadow);
+  background-color: var(--bgColor);
+  min-height: 100vh;
+}

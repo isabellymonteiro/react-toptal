@@ -1,0 +1,13 @@
+:root {
+  --fontFamily: 'Dosis', sans-serif;
+  --titleFontSize: 3rem;
+  --textColor: rgb(49, 49, 49);
+  --textShadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  --bgColor: #c9b1ee;
+  
+  --headerPaddingTop: 10%;
+
+  --forecastBoxShadow: 3px 0px 21px -3px rgba(0,0,0,0.1);
+  --forecastBorderRadius: 0.5rem;
+}

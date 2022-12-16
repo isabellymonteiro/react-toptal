@@ -1,0 +1,16 @@
+.loadingImage {
+  display: block;
+  width: 100%;
+  margin: auto;
+  animation: rotate360 2.5s infinite linear;
+}
+
+@keyframes rotate360 {
+  to {
+    transform: rotate(0);
+  }
+
+  from {
+    transform: rotate(360deg);
+  }
+}
