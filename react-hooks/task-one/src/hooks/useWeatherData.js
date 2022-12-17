@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
+import { getCityData, getForecastData, getLocationData } from '../utils/getData'
 
-const API_KEY = 'GoVQSMAEFnA7tFcFDNtkIA0r4ViHOffq'
-const URL = 'http://dataservice.accuweather.com'
-
-const useWeatherData = (success, position) => {
+const useWeatherData = (success, payload) => {
   const [data, setData] = useState(undefined)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -11,28 +9,33 @@ const useWeatherData = (success, position) => {
   useEffect(() => {
     if (!success) return
 
-    const {latitude, longitude } = position
-
     const getWeatherData = async () => {
+      let locationData
+      let locationKey
+
       try {
-        const locationResponse = await fetch(
-          `${URL}/locations/v1/cities/geoposition/search?apikey=${API_KEY}&q=${latitude},${longitude}`
-        )
-      
-        if (!locationResponse.ok) throw new Error('Something went wrong getting location')
-        
-        const locationData = await locationResponse.json()
+        // fetch by city
+        if (typeof payload === 'string') {
+          const data = await getCityData(payload)
 
-        const forecastResponse = await fetch(
-          `${URL}/forecasts/v1/daily/5day/${locationData.Key}?apikey=${API_KEY}`
-        )
+          if (!data.length) throw Error('No city found')
 
-        if (!forecastResponse.ok) throw new Error('Something went wrong getting location weather')
+          locationData = { mainPlace: data[0].LocalizedName, secondaryPlace: data[0].AdministrativeArea.LocalizedName }
+          locationKey = data[0].Key
+        } else {
+          // fetch by latitude and longitude
+          const { latitude, longitude } = payload
+          const data = await getLocationData(latitude, longitude)
 
-        const forecastData = await forecastResponse.json()
+          locationData = { mainPlace: data.LocalizedName, secondaryPlace: data.SupplementalAdminAreas[0].LocalizedName }
+          locationKey = data.Key
+        }
+
+        const forecastData = await getForecastData(locationKey)
 
         setData({ locationData, forecastData })
       } catch (err) {
+        console.log(err)
         setError(err.message) 
       } finally {
         setLoading(false)
@@ -41,7 +44,7 @@ const useWeatherData = (success, position) => {
 
     getWeatherData()
     
-  }, [success, position])
+  }, [success, payload])
 
   return {
     data,

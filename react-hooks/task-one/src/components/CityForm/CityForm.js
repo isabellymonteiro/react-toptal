@@ -1,22 +1,19 @@
 import { useState } from 'react'
 import './styles.css'
 
-const CityForm = () => {
+const CityForm = ({ handleSubmit }) => {
   const [city, setCity] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form onSubmit={(e) => handleSubmit(e, city)} className='cityForm'>
       <input 
         type='text' 
         value={city} 
         placeholder='Enter your city'
-        onChange={(e) => setCity(e.target.value)} 
+        onChange={(e) => setCity(e.target.value)}
+        className='cityForm__input'
       />
-      <button disabled={city.trim() === ''}>Send</button>
+      <button disabled={city.trim() === ''} className='cityForm__button'>Send</button>
     </form>
   )
 }

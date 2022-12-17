@@ -1,0 +1,37 @@
+.cityForm {
+  display: flex;
+  gap: 1rem;
+  margin: auto;
+}
+
+.cityForm__input, .cityForm__button {
+  font-family: var(--fontFamily);
+  font-size: 1.5rem;
+  color: black;
+  border-radius: .5rem;
+  border: none;
+  padding: .5rem 1rem;
+}
+
+.cityForm__input {
+  width: 100%;
+}
+
+.cityForm__button {
+  font-weight: 500;
+  background-color: rgb(173, 236, 176);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.cityForm__button:hover {
+  transform: scale(1.16);
+  background-color: rgb(140, 238, 145);
+}
+
+.cityForm__button:disabled {
+  transform: scale(1);
+  background-color: rgb(134, 148, 136);
+  opacity: .5;
+  cursor: not-allowed;
+}
