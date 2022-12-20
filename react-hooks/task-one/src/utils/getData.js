@@ -1,5 +1,5 @@
 // put your AccuWeather api key below
-const API_KEY = ''
+const API_KEY = 'MdwxJ1x7kfiTT2JFQ1p1dNoHrw4eG41f'
 const URL = 'http://dataservice.accuweather.com'
 
 export const getLocationData = async (latitude, longitude) => {

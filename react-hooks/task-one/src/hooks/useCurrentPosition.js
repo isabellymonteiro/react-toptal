@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const useCurrentPosition = () => {
-  const [position, setPosition] = useState({})
+  const [position, setPosition] = useState(null)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
   

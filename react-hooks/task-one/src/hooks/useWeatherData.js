@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { getCityData, getForecastData, getLocationData } from '../utils/getData'
 
-const useWeatherData = (success, payload) => {
+const useWeatherData = (enabled, payload) => {
   const [data, setData] = useState(undefined)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
   useEffect(() => {
-    if (!success) return
-
+    if (!enabled) return
+    
     const getWeatherData = async () => {
       let locationData
       let locationKey
@@ -35,7 +35,6 @@ const useWeatherData = (success, payload) => {
 
         setData({ locationData, forecastData })
       } catch (err) {
-        console.log(err)
         setError(err.message) 
       } finally {
         setLoading(false)
@@ -44,7 +43,7 @@ const useWeatherData = (success, payload) => {
 
     getWeatherData()
     
-  }, [success, payload])
+  }, [enabled, payload])
 
   return {
     data,
