@@ -67,7 +67,12 @@ export const menuMethods: MenuMethods = {
     }
     
     // return menu copy if criterion is not available
-    return menuCopy
+    return menuCopy 
+    // should I return a default value in case criterion is not available or 
+    // typescript guarantees it will always be available since it checks it (during development)?
+    // in this case, I wouldn't have to return menuCopy because typescript would check during development
+    // put if the user would send the criterion (not the developer coding, as typescript checks this case), I would
+    // have to change my Criterion type to include what the user may type (like another string) and deal with that
   },
   getMenu: () => menu
 }
