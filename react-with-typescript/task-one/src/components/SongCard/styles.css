@@ -1,0 +1,28 @@
+.songCard {
+  box-sizing: border-box;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  color: var(--dark-yellow);
+  background-color: var(--dark-blue);
+  border-radius: .5rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+.songCard__img {
+  border-radius: .5rem;
+  margin-bottom: .5rem;
+}
+
+.songCard__album {
+  color: var(--dark-rose);
+}
+
+.songCard__title, .songCard__album {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
