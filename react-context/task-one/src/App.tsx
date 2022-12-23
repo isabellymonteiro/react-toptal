@@ -1,7 +1,7 @@
 import AppContainer from './components/AppContainer'
-import CommentForm from './components/CommentForm'
+import CommentForm from './components/Forms/CommentForm'
 import CommentList from './components/CommentList'
-import LoginForm from './components/LoginForm'
+import LoginForm from './components/Forms/LoginForm'
 import LogoutButton from './components/LogoutButton'
 import { useUser } from './contexts'
 import { CommentsProvider } from './contexts/CommentsContext'
@@ -16,8 +16,8 @@ function App() {
       <CommentsProvider>
         {isLoggedIn && <LogoutButton />}
         {!isLoggedIn && <LoginForm />}
-        {isLoggedIn && <CommentForm />}
         <CommentList />
+        {isLoggedIn && <CommentForm />}
       </CommentsProvider>
     </AppContainer>
   )

@@ -1,5 +1,6 @@
 import { useComments } from '../../contexts'
 import Comment from '../Comment/'
+import './styles.css'
 
 const CommentList = () => {
   const { comments } = useComments()
@@ -9,7 +10,7 @@ const CommentList = () => {
   )
 
   return (
-    <ul>
+    <ul className='commentsList'>
       {sortedComments.map(comment => <Comment key={comment.id} {...comment} />)}
     </ul>
   )

@@ -1,0 +1,19 @@
+.logoutButton {
+  align-self: end;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light-blue);
+  background-color: var(--dark-blue);
+  border: none;
+  border-radius: .25rem;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.logoutButton:hover {
+  color: var(--dark-blue);
+  background-color: var(--light-blue);
+}

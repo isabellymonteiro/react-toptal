@@ -1,5 +1,11 @@
 :root {
-  --dark-blue: #1e1d7b;
-  --light-blue: #8CB6E1;
-  --light-purple: #B6A2DF;
+  --font-family: 'Poppins', sans-serif;
+
+  --dark-blue: #11224E;
+  --blue: #223BC9;
+  --light-blue: #DCF0FD;
+  --grey: #ACABAB;
+  --light-grey: #E9E9E9;
+  --white: #FAFAFA;
+  --red: #d46367;
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { useUser } from '../../contexts'
+import { useUser } from '../../../contexts'
+import '../styles.css'
 
 const LoginForm = () => {
   const [username, setUsername] = useState('')
@@ -15,18 +16,20 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <>
+      <form className='form' onSubmit={handleSubmit}>
         <input
+          className='form__input'
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          aria-label='Log in'
+          placeholder='username'
+          aria-label='username'
         />
-        <button>Log in</button>
+        <button className='form__button'>Log in</button>
       </form>
-      {error && <span>User already exists, please try another one</span>}
-    </div>
+      {error && <span className='form__error'>User already exists, please try another one</span>}
+    </>
   )
 }
 

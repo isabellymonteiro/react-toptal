@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { useComments, useUser } from '../../contexts'
+import { useComments, useUser } from '../../../contexts'
+import '../styles.css'
 
 const CommentForm = () => {
   const [commentText, setCommentText] = useState('')
@@ -18,14 +19,15 @@ const CommentForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type='text'
+    <form className='form' onSubmit={handleSubmit}>
+      <textarea
+        className='form__input'
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
+        placeholder='Add a comment...'
         aria-label='Add a comment'
       />
-      <button>Send comment</button>
+      <button className='form__button'>Send</button>
     </form>
   )
 }

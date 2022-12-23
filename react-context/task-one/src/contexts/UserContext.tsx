@@ -25,14 +25,16 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const isLoggedIn = !!username
 
   const logIn = (name: string) => {
-    if (users.includes(name)) {
+    const lowercaseName = name.toLocaleLowerCase()
+
+    if (users.includes(lowercaseName)) {
       setError(true)
       return
     }
 
-    setUsers(prevState => [...prevState, name ])
+    setUsers(prevState => [...prevState, lowercaseName])
     setUserId(uuidv4())
-    setUsername(name)
+    setUsername(lowercaseName)
   }
 
   const logOut = () => {
