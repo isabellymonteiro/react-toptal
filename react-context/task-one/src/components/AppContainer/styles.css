@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+
+.appContainer {
+  color: var(--light-blue);
+  background-color: var(--dark-blue);
+  padding: 10% 5%;
+  min-height: 100vh;
+}
