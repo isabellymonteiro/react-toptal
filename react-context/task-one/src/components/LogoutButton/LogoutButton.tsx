@@ -1,11 +1,11 @@
 import { useUser } from "../../contexts"
-import './styles.css'
+import styles from './LogoutButton.module.css'
 
 const LogoutButton = () => {
   const { logOut } = useUser()
 
   return (
-    <button className='logoutButton' onClick={logOut}>
+    <button className={styles.logoutButton} onClick={logOut}>
       Log out
     </button>
   )

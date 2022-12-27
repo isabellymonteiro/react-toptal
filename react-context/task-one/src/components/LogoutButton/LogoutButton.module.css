@@ -6,7 +6,7 @@
   text-transform: uppercase;
   color: var(--light-blue);
   background-color: var(--dark-blue);
-  border: none;
+  border: 2px solid var(--dark-blue);
   border-radius: .25rem;
   padding: .5rem 1rem;
   cursor: pointer;

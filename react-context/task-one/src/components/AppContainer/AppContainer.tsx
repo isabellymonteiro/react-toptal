@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
-import './styles.css'
+import styles from './AppContainer.module.css'
 
 const AppContainer = ({ children }: { children: ReactNode}) => {
   return (
-    <div className='appContainer'>
+    <div className={styles.appContainer}>
       {children}
     </div>
   )

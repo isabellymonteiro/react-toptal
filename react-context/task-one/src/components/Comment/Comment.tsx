@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { CommentObject } from "../../interfaces"
 import { useComments, useUser } from '../../contexts'
-import './styles.css'
+import styles from './Comment.module.css'
 
 const Comment = ({ id, author, commentText, commentVotes }: CommentObject) => {
   const [isEditing, setIsEditing] = useState(false)
@@ -20,7 +20,6 @@ const Comment = ({ id, author, commentText, commentVotes }: CommentObject) => {
       }
       dispatch({ type: 'edit', payload: { id, newComment: editedComment } })
       setIsEditing(false)
-      console.log(isEditing)
       return
     }
 
@@ -28,52 +27,52 @@ const Comment = ({ id, author, commentText, commentVotes }: CommentObject) => {
   }
 
   return (
-    <li className='commentContainer'>
-      <div className='comment__votesContainer'>
+    <li className={styles.commentContainer}>
+      <div className={styles.votesContainer}>
         <button 
-          className='comment__votesButton'
+          className={`${styles.button} ${styles.votesButton}`}
           onClick={() => dispatch({ type: 'increment_votes', payload: id })}
         >
           +
         </button>
-        <span className='comment__votes'>{commentVotes}</span>
+        <span className={styles.votes}>{commentVotes}</span>
         <button
-          className='comment__votesButton'
+          className={`${styles.button} ${styles.votesButton}`}
           onClick={() => dispatch({ type: 'decrement_votes', payload: id })}
         >
           -
         </button>
       </div>
-      <div className='comment__authorSpecific'>
-        <span className='comment__authorName'>{author}</span>
+      <div className={styles.authorSpecific}>
+        <span className={styles.authorName}>{author}</span>
         {username === author &&
-          <div className='comment__authorActions'>
+          <div className={styles.authorActions}>
             <button 
-              className='comment__authorActions--delete'
+              className={`${styles.button} ${styles.deleteButton}`}
               onClick={() => dispatch({ type: 'delete', payload: id })}
             >
               Delete
             </button>
-            <button className='comment__authorActions--edit' onClick={editComment}>
+            <button className={`${styles.button} ${styles.editButton}`} onClick={editComment}>
               {isEditing ? 'Save' : 'Edit'}
             </button>
             {isEditing && 
-              <button className='comment__authorActions--cancel' onClick={() => setIsEditing(false)}>
+              <button className={`${styles.button} ${styles.cancelButton}`} onClick={() => setIsEditing(false)}>
                 Cancel
               </button>
             }
           </div>
         }
       </div>
-      <div className='comment__text'>
+      <div className={styles.comment}>
         {isEditing 
           ? <textarea
-              className='comment__editing'
+              className={styles.commentTextarea}
               value={editedComment}
               onChange={(e) => setEditedComment(e.target.value)}
               aria-label='Edit your message'
             />
-          : <p className='comment'>{commentText}</p>
+          : <p className={styles.commentText}>{commentText}</p>
         }
       </div>
     </li>

@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useReducer } from 'react'
 import { CommentObject } from '../interfaces'
-import { type ActionType, initialState, reducer } from '../stateManagement/commentsReducer'
+import { type ActionType, initialState, reducer } from '../reducers/commentsReducer'
 
 interface CommentsContextProps {
   comments: CommentObject[]

@@ -8,10 +8,11 @@
   background-color: var(--white);
   border-radius: .5rem;
   padding: 1rem;
-  width: 100%
+  width: 100%;
+  box-shadow: 6px 6px 19px -3px rgba(0, 0, 0, 0.75);
 }
 
-.comment__votesContainer {
+.votesContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,10 +24,7 @@
   height: min-content;
 }
 
-.comment__votesButton,
-.comment__authorActions--delete,
-.comment__authorActions--edit,
-.comment__authorActions--cancel {
+.button {
   justify-self: center;
   font-size: 1rem;
   font-weight: 600;
@@ -37,58 +35,58 @@
   height: min-content;
 }
 
-.comment__votesButton {
+.votesButton {
   color: var(--grey);
 }
 
-.comment__votesButton:hover {
+.votesButton:hover {
   color: var(--dark-blue);
   transform: scale(1.2);
 }
 
-.comment__votes {
+.votes {
   color: var(--blue);
   font-weight: 600;
 }
 
-.comment__authorSpecific {
+.authorSpecific {
   display: flex;
   justify-content: space-between;
   grid-column: 2 / 4;
 }
 
-.comment__authorName {
+.authorName {
   font-weight: 600;
 }
 
-.comment__authorActions {
+.authorActions {
   display: flex;
   gap: .5rem;
 }
 
-.comment__authorActions--delete {
+.deleteButton {
   color: var(--red);
 }
 
-.comment__authorActions--edit {
+.editButton {
   color: var(--blue);
 }
 
-.comment__authorActions--delete:hover,
-.comment__authorActions--edit:hover,
-.comment__authorActions--cancel:hover {
+.deleteButton:hover,
+.editButton:hover,
+.cancelButton:hover {
   transform: scale(1.05);
   background-color: var(--light-grey);
   border-radius: .25rem;
 }
 
-.comment__text {
+.comment {
   grid-column: 2 / 4;
   word-break: break-all;
   width: 100%;
 }
 
-.comment__editing {
+.commentTextarea{
   box-sizing: border-box;
   font-family: var(--font-family);
   font-size: 1rem;
@@ -100,7 +98,7 @@
   height: 100%;
 }
 
-.comment {
+.commentText {
   height: 100%;
   margin: 0;
 }
