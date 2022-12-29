@@ -8,9 +8,9 @@ export interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Loader = ({ 
-  size,
-  duration,
-  color,
+  size, // provide default?
+  duration, // provide default?
+  color, // provide default?
   ...props
 }: LoaderProps) => <S.Loader {...props} size={size} duration={duration} color={color} />
 

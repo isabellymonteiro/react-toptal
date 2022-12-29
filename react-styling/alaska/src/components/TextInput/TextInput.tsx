@@ -13,7 +13,7 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const TextInput = ({
   id,
-  color,
+  color, // provide default?
   label,
   labelPosition = 'left',
   fullWidth = false,

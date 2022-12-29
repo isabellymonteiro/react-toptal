@@ -8,8 +8,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = ({ 
-  variant,
-  color,
+  variant, // provide default?
+  color, // provide default?
   fullWidth = false,
   ...props
 }: ButtonProps) => <S.Button {...props} variant={variant} color={color} fullWidth={fullWidth} />
