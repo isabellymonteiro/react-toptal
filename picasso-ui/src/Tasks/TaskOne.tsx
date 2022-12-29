@@ -1,16 +1,16 @@
-import { Page, Container, Typography, Code16, Table } from "@toptal/picasso"
+import { Page, Container, Typography, Code16, Table } from '@toptal/picasso'
 import { data } from '../database'
 
 const TaskOne = () => {
  return (
     <Page>
-        <Page.TopBar title='Top heroes' />
-        <Page.Content>
-          <Container flex gap='xlarge' alignItems='flex-start'>
-            <FirstBox />
-            <SecondBox />
-          </Container>
-        </Page.Content>
+      <Page.TopBar title='Top heroes' />
+      <Page.Content>
+        <Container flex gap='xlarge' alignItems='flex-start'>
+          <FirstBox />
+          <SecondBox />
+        </Container>
+      </Page.Content>
     </Page>
  )
 }
@@ -54,8 +54,8 @@ const SecondBox = () => {
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          {data.map(row => (
-            <Table.Row key={row.id}>
+          {data.map((row, index) => (
+            <Table.Row key={index}>
               <Table.Cell>{row.name}</Table.Cell>
               <Table.Cell>{row.hero}</Table.Cell>
               <Table.Cell>{row.cape}</Table.Cell>
