@@ -9,11 +9,11 @@ const LoaderSize = {
 }
 
 export const Loader = styled.div<LoaderProps>`
-  border: 4px solid ${props => props.theme.colors[props.color]};
+  border: 4px solid ${props => props.theme.colors[props.color!]};
   border-radius: 50%;
   border-right-color: transparent;
-  width: ${props => LoaderSize[props.size]};
-  height: ${props => LoaderSize[props.size]};
+  width: ${props => LoaderSize[props.size!]};
+  height: ${props => LoaderSize[props.size!]};
   animation-name: rotate-loader;
   animation-duration: ${props => `${props.duration}s`};
   animation-iteration-count: infinite;

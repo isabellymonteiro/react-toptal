@@ -14,21 +14,19 @@ function App() {
 
         <S.Heading2>Button</S.Heading2>
         <S.RowGrouped>
-          <Button variant='outlined' color='primary' fullWidth>Full width Button</Button>
-          <Button variant='contained' color='primary'>Button</Button>
+          <Button variant='outlined' fullWidth>Full width Button</Button>
+          <Button>Button</Button>
           <Button variant='outlined' color='warning'>Warning</Button>
-          <Button variant='contained' color='warning'>Warning</Button>
+          <Button color='warning'>Warning</Button>
           <Button variant='outlined' color='danger'>Error</Button>
-          <Button variant='contained' color='danger'>Error</Button>
+          <Button color='danger'>Error</Button>
         </S.RowGrouped>
 
         <S.Heading2>Text Input</S.Heading2>
         <S.ColumnGrouped>
           <TextInput 
             id='name'
-            color='primary'
             label='Name'
-            labelPosition='left'
             placeholder='Your name'
             fullWidth
             required
@@ -53,10 +51,10 @@ function App() {
 
         <S.Heading2>Loader</S.Heading2>
         <S.RowGrouped className='flex-row-grouped'>
-          <Loader size='sm' duration={1} color='danger' />
-          <Loader size='md' duration={2} color='secondary' />
-          <Loader size='lg' duration={3} color='warning' />
-          <Loader size='xl' duration={1} color='primary' />
+          <Loader size='sm' duration={2} color='danger' />
+          <Loader />
+          <Loader size='lg' duration={2} color='secondary' />
+          <Loader size='xl' duration={3} color='warning' />
         </S.RowGrouped>
       </S.Demo>
     </ThemeProvider>

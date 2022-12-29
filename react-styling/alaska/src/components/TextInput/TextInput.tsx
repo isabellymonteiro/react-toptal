@@ -3,7 +3,7 @@ import * as S from './styles'
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string
-  color: 'primary' | 'secondary' | 'warning' | 'danger' | 'black' | 'white'
+  color?: 'primary' | 'secondary' | 'warning' | 'danger' | 'black' | 'white'
   label: string
   labelPosition?: 'top' | 'left' | 'none'
   fullWidth?: boolean
@@ -13,7 +13,7 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const TextInput = ({
   id,
-  color, // provide default?
+  color = 'primary',
   label,
   labelPosition = 'left',
   fullWidth = false,

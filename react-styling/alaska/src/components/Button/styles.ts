@@ -10,7 +10,7 @@ export const Button = styled.button<ButtonProps>`
   font-weight: 500;
   letter-spacing: .5px;
   color: ${props => props.variant === 'outlined' 
-    ? props.theme.colors[props.color]
+    ? props.theme.colors[props.color!]
     : ( 
         props.color === 'secondary' || props.color === 'warning'
           ? props.theme.colors.black
@@ -20,10 +20,10 @@ export const Button = styled.button<ButtonProps>`
   text-transform: uppercase;
   background-color: ${props => props.variant === 'outlined' 
     ? 'transparent'
-    : props.theme.colors[props.color]
+    : props.theme.colors[props.color!]
   };
   border: ${props => props.variant === 'outlined' 
-    ? `1px solid ${props.theme.colors[props.color]}`
+    ? `1px solid ${props.theme.colors[props.color!]}`
     : 'none'
   };
   border-radius: ${props => props.theme.borderRadius};
@@ -34,8 +34,8 @@ export const Button = styled.button<ButtonProps>`
 
   &:hover {
     background-color: ${props => props.variant === 'outlined'
-      ?  props.theme.colors[props.color] + '30'
-      : props.theme.colors[props.color] + '99'
+      ?  props.theme.colors[props.color!] + '30'
+      : props.theme.colors[props.color!] + '99'
     };
   }
 `
