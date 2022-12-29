@@ -50,7 +50,6 @@ export const reducer = (state: typeof initialState, action: ActionType) => {
           if (comment.id === action.payload && comment.commentVotes > 0) {
             comment.commentVotes -= 1
           }
-          console.log(comment)
           return comment
         })
       }
