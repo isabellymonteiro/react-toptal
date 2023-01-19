@@ -6,6 +6,10 @@ import { getRandomColor } from './utils/getRandomColor'
 
 import './App.css'
 
+export const TestId = {
+  Root: 'app-root'
+}
+
 const App = () => {
   const [colorList, setColorList] = useState(colors)
 
@@ -23,7 +27,7 @@ const App = () => {
   }
 
   return (
-    <div className='App'>
+    <div className='App' data-testid={TestId.Root}>
       <TileCounter
         tileCount={colorListLength}
         onIncrement={handleIncrement}
