@@ -3,7 +3,7 @@ import useCurrentPosition from './hooks/useCurrentPosition'
 import useWeatherData from './hooks/useWeatherData'
 import Header from './components/Header'
 import Forecasts from './components/Forecasts/Forecasts'
-import Loading from './components/Loading'
+import Loader from './components/Loader'
 import CityForm from './components/CityForm'
 import Error from './components/Error'
 import PageWrapper from './components/PageWrapper'
@@ -38,7 +38,7 @@ function App() {
   if (loading) {
     return (
       <PageWrapper>
-        <Loading width='140px'/>
+        <Loader width='140px'/>
       </PageWrapper>
     )
   }

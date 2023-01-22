@@ -1,13 +1,13 @@
 import './styles.css'
 
-const Loading = ({ width }) => {
+const Loader = ({ width }) => {
   return (
     <img 
-      className='loadingImage' 
+      className='loaderImage' 
       style={{ maxWidth: width }} 
       src='/images/hourglass.svg' alt='Loading' 
     />
   )
 }
 
-export default Loading
+export default Loader
