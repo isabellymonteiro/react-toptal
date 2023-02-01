@@ -1,0 +1,72 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 24px;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.small-gap {
+  gap: .5rem;
+}
+
+.large-gap {
+  gap: 2rem;
+}
+
+.blue {
+  color: lightskyblue;
+}
+
+.yellow {
+  color: yellow;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  color:rgba(255, 255, 255, 0.87);
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+.modal { 
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid yellow;
+  border-radius: .5rem;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 999;
+  padding: 20px;
+}
