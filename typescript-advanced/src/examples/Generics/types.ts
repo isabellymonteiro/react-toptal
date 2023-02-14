@@ -1,3 +1,5 @@
+// https://www.typescriptlang.org/docs/handbook/2/generics.html
+
 // Generics example: to get rid of repetitions
 interface PaginatedResponse<T> {
   data: T[],

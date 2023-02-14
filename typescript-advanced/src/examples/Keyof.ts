@@ -1,3 +1,5 @@
+// https://www.typescriptlang.org/docs/handbook/2/keyof-types.html
+
 export interface Point { 
   x: number
   y: number

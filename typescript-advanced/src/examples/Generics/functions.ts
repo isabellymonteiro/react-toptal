@@ -1,3 +1,5 @@
+// https://www.typescriptlang.org/docs/handbook/2/generics.html
+
 // Generic Types example
 export const filterByValue = <T, KEY extends keyof T>(
   array: T[],
