@@ -7,7 +7,6 @@ export const Colors = {
   green: "GREEN",
 } as const
 
-
 /* 
   // Error: A 'const' assertion can only be applied to a 
   // string, number, boolean, array, or object literal.
