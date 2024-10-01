@@ -1,2 +1,2 @@
 # React Toptal
-React homework for Toptal's bootcamp
+React homework for Toptal's bootcamp (internship)
